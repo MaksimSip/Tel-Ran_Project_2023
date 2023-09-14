@@ -1,0 +1,19 @@
+.discounted_items_container {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.discounted_items_container input {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  border: 1px solid #000;
+  margin-left: 40px;
+}

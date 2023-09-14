@@ -1,0 +1,125 @@
+.single_product_content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  margin: 30px auto;
+}
+
+.single_product h3 {
+  margin-top: 137px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 1.08px;
+}
+
+.single_product img {
+  height: 710px;
+  width: 710px;
+  object-fit: contain;
+}
+
+.price_descripcion {
+  margin-top: 100px;
+  height: 710px;
+  width: 452px;
+}
+
+.price p {
+  display: inline-block;
+}
+
+.price_1 {
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 2.1px;
+}
+
+.price_1_sm {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+}
+
+.price_2 {
+  margin-left: 101px;
+  color: #8b8b8b;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+  text-decoration-line: strikethrough;
+  text-decoration: line-through;
+}
+
+.price_3 {
+  margin-left: 80px;
+  color: #ff32a1;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.84px;
+}
+
+.price_3_proc {
+  color: #ff32a1;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+}
+
+.price_descripcion hr {
+  border: none;
+  border-top: 2px dashed #c0c0c0;
+}
+
+.add_to_cart_btn {
+  margin: 40px 0px;
+  display: inline-flex;
+  padding: 25px 120px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 10px;
+  border: 2px solid #393;
+  background: #393;
+  width: fit-content;
+  cursor: pointer;
+  color: #fff;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.single_product h4 {
+  margin-top: 25px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+}
+
+.description {
+  margin-top: 15px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+}
+
+.single_product{
+  margin-bottom: 187px;
+}

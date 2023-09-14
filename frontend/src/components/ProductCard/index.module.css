@@ -1,0 +1,80 @@
+.card {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card img {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+  align-self: start;
+}
+
+.price p {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.price_1 {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.9px;
+}
+
+.price_2 {
+  color: #8b8b8b;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+  text-decoration-line: strikethrough;
+  text-decoration: line-through;
+}
+
+.price_3 {
+  color: #ff32a1;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 26px */
+  letter-spacing: 0.6px;
+}
+
+.title p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+}
+
+.add_to_cart_btn {
+  text-align: center;
+  line-height: 72px; 
+  margin-top: 228px;
+  width: 279px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 21px;
+  border: 2px solid #393;
+  background: #f1fff1;
+  cursor: pointer;
+  color: #393;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  display: none;
+ 
+}
+
+.card:hover .add_to_cart_btn {
+  display: block;
+  
+  position: absolute;
+}

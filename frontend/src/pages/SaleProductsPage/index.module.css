@@ -1,0 +1,16 @@
+.sale_products_page h2 {
+  margin-left: 22px;
+  margin-top: 80px;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 1.2px;
+}
+
+.filters {
+  margin-top: 80px; 
+  display: grid;
+  grid-template-columns:300px 500px;
+  align-items: center;
+}

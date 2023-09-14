@@ -1,0 +1,46 @@
+.saleFormMainCard {
+  width: 1440px;
+  height: 600px;
+  background-color: #a1e2eb;
+  padding-left: 50px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  color: #fff;
+  align-items: center;
+}
+
+
+.saleFormMainCard h1 {
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.saleFormMainCard h2 {
+  font-size: 63px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.saleFormMainCard button {
+  background-color: #FFF; 
+  font-size: 25px; 
+  font-weight: 700;
+  padding: 25px 50px; 
+  margin-top: 50px;
+  border: none; 
+  border-radius: 13px; 
+  cursor: pointer;
+  gap: 10px;
+}
+
+.saleFormMainCard img {
+    width: 940px;
+    height: 679px;
+    padding-bottom: 70px;
+    margin-right: 0px;
+  }

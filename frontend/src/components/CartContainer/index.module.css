@@ -1,0 +1,84 @@
+.cart_page_form {
+  width: 496px;
+  height: 393px;
+  flex-shrink: 0;
+  border-radius: 21px;
+  border: 2px solid #000;
+}
+
+.cart_page_form h2 {
+  margin: 25px;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.84px;
+}
+
+.cart_page_form h3 {
+  margin: 25px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.72px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total p {
+  margin-right: 43px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.96px;
+}
+
+.price_1_sm {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.3px;
+}
+
+.cart_page_form input {
+  margin: 25px;
+  width: 446px;
+  height: 73px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #929292;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.54px;
+  text-align: center;
+}
+
+.cart_page_form button {
+  display: flex;
+  justify-content: center;
+  width: 446px;
+  padding: 20px 0px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 17px;
+  background: #393;
+  color: #fff;
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.84px;
+  cursor: pointer;
+}
