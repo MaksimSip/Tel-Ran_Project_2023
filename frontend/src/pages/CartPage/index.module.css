@@ -1,3 +1,30 @@
 .cart_page_products {
-    width: 824px;
-}
+    margin-bottom: 143px;
+  }
+  
+  .cart_page_title {
+    margin: 79px 0px 79px 30px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 1.2px;
+  }
+  
+  .cart_page_back {
+      margin: 15px 0px 34px 650px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    cursor: pointer;
+  }
+  
+  .cart_page_img {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .cart_page_products {
+      margin-top: 34px;
+  }

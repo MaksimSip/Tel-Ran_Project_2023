@@ -1,7 +1,9 @@
 .cart_item {
   height: 274px;
   width: 824px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr 1fr 1fr;
+  justify-self: start;
   align-items: center;
   border-top: 1px solid #a7a7a7;
   border-bottom: 1px solid #a7a7a7;
@@ -10,6 +12,7 @@
 }
 
 .cart_item_title {
+  margin-left: 30px;
   width: 320px;
 }
 
@@ -23,16 +26,23 @@
 }
 
 .count {
+  margin-left: 0px;
   width: 140px;
   height: 40px;
+  display: flex;
+  padding-top: 8px;
   border: 1px solid black;
   border-radius: 12px;
+  font-size: 30px;
 }
 
-.cart_item button {
-  width: 18px;
-  height: 18px;
-  font-size: 18px;
+.count_p {
+  /* font-size: 10px; */
+  text-align: center;
+}
+
+.count_button {
+  /* font-size: 1px; */
   cursor: pointer;
 }
 
@@ -43,6 +53,35 @@
   border-radius: 15px;
 }
 
-.count {
-  display: flex;
+.price_1 {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 1.2px;
+}
+
+.price_1_sm {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+}
+
+.price_2 {
+  color: #8B8B8B;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; 
+  letter-spacing: 0.6px;
+  text-decoration: line-through;
+}
+
+.cart_item_x {
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: 150px;
+  margin-left: 50px;
 }

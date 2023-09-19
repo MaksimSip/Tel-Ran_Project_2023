@@ -12,7 +12,7 @@ export default function SaleProductsPage() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(getSaleProducts), []);
+  useEffect(() => {dispatch(getSaleProducts)}, [dispatch]);
 
   const sale_products_state = useSelector(state => state.saleProducts);
 
