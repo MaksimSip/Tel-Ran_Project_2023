@@ -30,7 +30,7 @@ export default function ProductCard({ id, image, title, price, discont_price }) 
       </Link>
       <div
         className={s.add_to_cart_btn}
-        onClick={() => dispatch(addToCartAction({ id, image, title, price }))}
+        onClick={() => dispatch(addToCartAction({ id, image, title, price, discont_price}))}
       >
         Add to cart
       </div>

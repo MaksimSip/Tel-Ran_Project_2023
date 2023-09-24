@@ -1,9 +1,17 @@
 const LOAD_SALE_PRODUCTS = "LOAD_SALE_PRODUCTS";
-const SORT_PRODUCTS = 'SORT_PRODUCTS';
-const FILTER_PRODUCTS_BY_PRICE = 'FILTER_PRODUCTS_BY_PRICE';
+const SALE_SORT_PRODUCTS = "SALE_SORT_PRODUCTS";
+const SALE_FILTER_PRODUCTS_BY_PRICE = "SALE_FILTER_PRODUCTS_BY_PRICE";
 
 export const loadSaleProductsAction = (payload) => ({
   type: LOAD_SALE_PRODUCTS,
+  payload,
+});
+export const saleSortProductsAction = (payload) => ({
+  type: SALE_SORT_PRODUCTS,
+  payload,
+});
+export const saleFilterProductsByPriceAction = (payload) => ({
+  type: SALE_FILTER_PRODUCTS_BY_PRICE,
   payload,
 });
 
@@ -17,22 +25,26 @@ export const saleProductsReducer = (state = [], action) => {
       }
       return el;
     });
-  } else if (action.type === SORT_PRODUCTS) {
+  } else if (action.type === SALE_SORT_PRODUCTS) {
     if (action.payload === "title") {
       state.sort((a, b) => a.title.localeCompare(b.title));
     } else if (action.payload === "price_asc") {
-      state.sort((a, b) => a.price - b.price);
+      state.sort((a, b) => a.discont_price - b.discont_price);
     } else if (action.payload === "price_desc") {
-      state.sort((a, b) => b.price - a.price);
+      state.sort((a, b) => b.discont_price - a.discont_price);
     } else if (action.payload === "default") {
       state.sort((a, b) => a.id - b.id);
     }
-
     return [...state];
-  } else if (action.type === FILTER_PRODUCTS_BY_PRICE) {
-    const { min_value, max_value } = action.payload;
+  } else if (action.type === SALE_FILTER_PRODUCTS_BY_PRICE) {
+    const { min, max } = action.payload;
+
     return state.map((el) => {
-      if (el.price >= min_value && el.price <= max_value) {
+      if (
+        el.discont_price != null &&
+        el.discont_price >= min &&
+        el.discont_price <= max
+      ) {
         el.visible = true;
       } else {
         el.visible = false;

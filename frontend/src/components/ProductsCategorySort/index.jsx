@@ -1,20 +1,20 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import { sortProductsCategoryAction, getCheapProductsCategoryAction,filterProductsCategoryByPriceAction} from '../../store/reducers/categoriesReducer';
+import { loadFilterProductsByCategory, loadGetCheapProductsByCategory, loadSortProductsByCategoryAction } from '../../store/reducers/productsByCategoryReducer';
 import s from './index.module.css'
 
 export default function ProductsCategorySort() {
     
     const dispatch = useDispatch();
 
-    const sorting = event => dispatch(sortProductsCategoryAction(event.target.value));
+    const sorting = event => dispatch(loadSortProductsByCategoryAction(event.target.value));
 
-    const filter = event => dispatch(getCheapProductsCategoryAction(event.target.checked))
+    const filter = event => dispatch(loadGetCheapProductsByCategory(event.target.checked))
 
     const filter_price = () => {
       const min = document.getElementsByName('min')[0].value || 0;
       const max = document.getElementsByName('max')[0].value || Infinity;
-      dispatch(filterProductsCategoryByPriceAction({ min_value: min, max_value: max }));
+      dispatch(loadFilterProductsByCategory({ min_value: min, max_value: max }));
     }
     
   return (

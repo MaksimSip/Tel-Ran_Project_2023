@@ -1,18 +1,33 @@
 const LOAD_PRODUCTS_BY_CATEGORY = "LOAD_PRODUCTS_BY_CATEGORY";
-const SORT_PRODUCTS = "SORT_PRODUCTS";
-const FILTER_PRODUCTS_BY_PRICE = "FILTER_PRODUCTS_BY_PRICE";
-const GET_CHEAP_PRODUCTS = "GET_CHEAP_PRODUCTS";
+const SORT_PRODUCTS_BY_CATEGORY = "SORT_PRODUCTS_BY_CATEGORY";
+const FILTER_PRODUCTS_BY_PRICE_BY_CATEGORY =
+  "FILTER_PRODUCTS_BY_PRICE_BY_CATEGORY";
+const GET_CHEAP_PRODUCTS_BY_CATEGORY = "GET_CHEAP_PRODUCTS_BY_CATEGORY";
 
 export const loadProductsByCategoryAction = (payload) => ({
   type: LOAD_PRODUCTS_BY_CATEGORY,
   payload,
 });
+export const sortProductsByCategoryAction = (payload) => ({
+  type: SORT_PRODUCTS_BY_CATEGORY,
+  payload,
+});
+export const filterProductsByCategory = (payload) => ({
+  type: FILTER_PRODUCTS_BY_PRICE_BY_CATEGORY,
+  payload,
+});
+export const getCheapProductsByCategory = (payload) => ({
+  type: GET_CHEAP_PRODUCTS_BY_CATEGORY,
+  payload,
+});
+
+const filters = { min: 0, max: Infinity, discont: false };
 
 export const productsByCategoryReducer = (state = [], action) => {
   if (action.type === LOAD_PRODUCTS_BY_CATEGORY) {
     action.payload.data.forEach((el) => (el.visible = true));
     return action.payload;
-  } else if (action.type === SORT_PRODUCTS) {
+  } else if (action.type === SORT_PRODUCTS_BY_CATEGORY) {
     if (action.payload === "title") {
       state.sort((a, b) => a.title.localeCompare(b.title));
     } else if (action.payload === "price_asc") {
@@ -22,23 +37,44 @@ export const productsByCategoryReducer = (state = [], action) => {
     } else if (action.payload === "default") {
       state.sort((a, b) => a.id - b.id);
     }
-
     return [...state];
-  } else if (action.type === FILTER_PRODUCTS_BY_PRICE) {
-    const { min_value, max_value } = action.payload;
+  } else if (action.type === FILTER_PRODUCTS_BY_PRICE_BY_CATEGORY) {
+    const { min, max } = action.payload;
+    filters.min = min;
+    filters.max = max;
     return state.map((el) => {
-      if (el.price >= min_value && el.price <= max_value) {
-        el.visible = true;
+      if (filters.discont) {
+        if (
+          el.discont_price >= filters.min &&
+          el.discont_price <= filters.max
+        ) {
+          el.visible = true;
+        } else {
+          el.visible = false;
+        }
       } else {
-        el.visible = false;
+        if (el.price >= min && el.price <= max) {
+          el.visible = true;
+        } else {
+          el.visible = false;
+        }
       }
       return el;
     });
-  } else if (action.type === GET_CHEAP_PRODUCTS) {
+  } else if (action.type === GET_CHEAP_PRODUCTS_BY_CATEGORY) {
+    console.log(1);
+    filters.discont = action.payload;
     if (action.payload) {
       return state.map((el) => {
         if (el.discont_price != null) {
-          el.visible = true;
+          if (
+            el.discont_price >= filters.min &&
+            el.discont_price <= filters.max
+          ) {
+            el.visible = true;
+          } else {
+            el.visible = false;
+          }
         } else {
           el.visible = false;
         }
@@ -46,7 +82,11 @@ export const productsByCategoryReducer = (state = [], action) => {
       });
     } else {
       return state.map((el) => {
-        el.visible = true;
+        if (el.price >= filters.min && el.price <= filters.max) {
+          el.visible = true;
+        } else {
+          el.visible = false;
+        }
         return el;
       });
     }

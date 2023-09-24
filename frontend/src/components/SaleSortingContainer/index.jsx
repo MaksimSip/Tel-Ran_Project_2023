@@ -1,18 +1,18 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { sortProductsAction } from '../../store/reducers/allProductsReducer';
+import { saleSortProductsAction } from '../../store/reducers/saleProductsReducer';
 import s from './index.module.css'
 
-export default function SortingContainer() {
+export default function SaleSortingContainer() {
 
     const dispatch = useDispatch();
 
-    const sort = e => dispatch(sortProductsAction((e.target.value)));
+    const sort = e => dispatch(saleSortProductsAction((e.target.value)));
 
   return (
     <label className={s.sorting_container}>
         <span>Sorted</span>
-        <select onChange={sort}>
+        <select onInput={sort}>
             <option value='default'>By default</option>
             <option value='title'>By title A-Z</option>
             <option value='price_asc'>By price ASC</option>

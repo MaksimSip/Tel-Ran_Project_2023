@@ -1,0 +1,23 @@
+.sorting_container span {
+  margin-right: 40px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.6px;
+}
+
+.sorting_container select {
+  width: 219px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  border: 1px solid #000;
+  text-indent: 10px;
+  color: #797979;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; 
+  letter-spacing: 0.48px;
+}

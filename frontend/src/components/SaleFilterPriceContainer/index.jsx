@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { filterProductsByPriceAction } from '../../store/reducers/allProductsReducer';
+import { saleFilterProductsByPriceAction } from '../../store/reducers/saleProductsReducer';
 import s from './index.module.css'
 
-export default function FilterPriceContainer() {
+export default function SaleFilterPriceContainer() {
 
   const dispatch = useDispatch();
 
@@ -19,17 +19,15 @@ export default function FilterPriceContainer() {
       const updatedParams = { ...filterParams, [name]: value };
       setFilterParams(updatedParams);
       console.log(updatedParams);
-      dispatch(filterProductsByPriceAction(updatedParams));
+      dispatch(saleFilterProductsByPriceAction(updatedParams));
     }
   }
 
   return (
     <form className={s.filter_price_container}>
       <p>Price</p>
-      <input type='text' placeholder='from' name='min' onChange={filter_price} />
-      <input type='text' placeholder='to' name='max' onChange={filter_price} />
+      <input type='number' placeholder='from' name='min' onChange={filter_price} />
+      <input type='number' placeholder='to' name='max' onChange={filter_price} />
     </form>
   )
 }
-
-

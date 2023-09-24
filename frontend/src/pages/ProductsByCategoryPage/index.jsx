@@ -2,10 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import DiscountedItemsContainer from '../../components/DiscountedItemsContainer';
-import FilterPriceContainer from '../../components/FilterPriceContainer';
 import ProductsContainer from '../../components/ProductsContainer';
-import SortingContainer from '../../components/SortingContainer';
 import { getProductsByCategory } from '../../requests/products_req'
 import s from './index.module.css'
 
@@ -15,7 +12,7 @@ export default function ProductsByCategoryPage( ) {
 
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(getProductsByCategory( category )));
+  useEffect(() => {dispatch(getProductsByCategory(category))}, [dispatch]);
 
   const catigory_products_state = useSelector(state => state.productsByCategory);
 
@@ -27,12 +24,7 @@ export default function ProductsByCategoryPage( ) {
     return (
     <div className={s.products_by_category_page}>
       <h2>{catigory}</h2>
-      <div className={s.filters}>
-      < FilterPriceContainer products= {products} />
-      < DiscountedItemsContainer products= {products} />
-      < SortingContainer products= {products} />
-      </div>
-      < ProductsContainer products= {products} />
+    < ProductsContainer products= {products} />
     </div>
   )
 }
