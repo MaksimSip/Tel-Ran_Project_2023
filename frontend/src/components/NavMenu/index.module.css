@@ -3,9 +3,8 @@
   height: 72px;
   background-color: white;
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
   align-items: center;
- 
 }
 
 .nav_menu a {
@@ -31,7 +30,7 @@
   background: #339933;
   border: 2px solid #339933;
   border-radius: 5px;
- }
+}
 
 .logo_button {
   margin-left: 28px;
@@ -61,6 +60,3 @@
   width: 30px;
   height: 30px;
 }
-
-
-

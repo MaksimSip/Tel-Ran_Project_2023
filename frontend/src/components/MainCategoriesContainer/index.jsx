@@ -5,7 +5,7 @@ import CategoryCard from '../CategoryCard';
 import s from './index.module.css'
 
 
-export default function CategoriesContainer() {
+export default function CategoriesContainerMain() {
 
   const dispatch = useDispatch();
 
@@ -17,7 +17,7 @@ export default function CategoriesContainer() {
     <div className={s.container}>
 
       {
-        categories_state.map(el => <CategoryCard key={el.id} {...el} />)
+        categories_state.slice(0, 4).map(el => <CategoryCard key={el.id} {...el} />)
       }
 
     </div>

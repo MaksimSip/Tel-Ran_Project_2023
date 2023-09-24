@@ -1,11 +1,10 @@
 * {
-  max-width: 1440px; 
-  margin: 0 auto; 
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   font-family: Montserrat;
   font-style: normal;
-
 }
 
 a {

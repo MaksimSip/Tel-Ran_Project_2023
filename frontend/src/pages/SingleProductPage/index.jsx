@@ -40,15 +40,15 @@ export default function SingleProductPage() {
             >
               To cart</div>
           </div>
-          <hr/>
+          <hr />
           <h4>Description</h4>
           <p className={s.description}>{description}</p>
         </div>
       </div>
-      </div>
+    </div>
 
 
-      )
+  )
 }
 
 // попробовать затиреть объект

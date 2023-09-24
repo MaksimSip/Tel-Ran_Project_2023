@@ -13,18 +13,17 @@ export default function AllProductsPage() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {dispatch(getAllProducts)}, []);
+  useEffect(() => { dispatch(getAllProducts) }, []);
 
   const products_state = useSelector(state => state.allProducts);
-
 
   return (
     <div className={s.all_products_page}>
       <h2>All products</h2>
       <div className={s.filters}>
-      <FilterPriceContainer />
-      <DiscountedItemsContainer />
-      <SortingContainer />
+        <FilterPriceContainer />
+        <DiscountedItemsContainer />
+        <SortingContainer />
       </div>
       <ProductsContainer products={products_state} />
     </div>

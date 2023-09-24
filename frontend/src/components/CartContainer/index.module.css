@@ -1,7 +1,6 @@
 .cart_container {
   display: grid;
   grid-template-columns: 3fr 2fr;
-
 }
 
 .cart_page_form {
@@ -88,4 +87,3 @@
   letter-spacing: 0.84px;
   cursor: pointer;
 }
-

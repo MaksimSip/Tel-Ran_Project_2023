@@ -25,10 +25,11 @@ const filters = { min: 0, max: Infinity, discont: false };
 
 export const productsByCategoryReducer = (state = [], action) => {
   if (action.type === LOAD_PRODUCTS_BY_CATEGORY) {
-    action.payload.data.forEach((el) => (el.visible = true));
+    action.payload.data.map((el) => (el.visible = true));
     return action.payload;
   } else if (action.type === SORT_PRODUCTS_BY_CATEGORY) {
-    if (action.payload === "title") {
+    if (action.payload.data === "title") {
+      console.log(state);
       state.sort((a, b) => a.title.localeCompare(b.title));
     } else if (action.payload === "price_asc") {
       state.sort((a, b) => a.price - b.price);
@@ -62,7 +63,6 @@ export const productsByCategoryReducer = (state = [], action) => {
       return el;
     });
   } else if (action.type === GET_CHEAP_PRODUCTS_BY_CATEGORY) {
-    console.log(1);
     filters.discont = action.payload;
     if (action.payload) {
       return state.map((el) => {

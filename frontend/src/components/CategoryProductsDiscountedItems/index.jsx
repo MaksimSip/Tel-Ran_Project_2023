@@ -1,13 +1,13 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { getCheapProductsAction } from '../../store/reducers/allProductsReducer';
+import { getCheapProductsByCategory } from '../../store/reducers/productsByCategoryReducer';
 import s from './index.module.css'
 
-export default function DiscountedItemsContainer() {
+export default function CategoryProductsDiscountedItems() {
 
   const dispatch = useDispatch();
 
-  const handleClick = e => dispatch(getCheapProductsAction(e.target.checked));
+  const handleClick = e => dispatch(getCheapProductsByCategory(e.target.checked));
 
   return (
     <label className={s.discounted_items_container}>

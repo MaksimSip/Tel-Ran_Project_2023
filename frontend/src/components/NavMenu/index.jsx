@@ -4,7 +4,6 @@ import s from './index.module.css'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 
 
-
 export default function NavMenu() {
   return (
     <div className={s.nav_menu}>
@@ -17,7 +16,7 @@ export default function NavMenu() {
         <Link to='/products/all'>All products</Link>
         <Link to='/products/sale'>All sales</Link>
       </div>
-      <Link to='/cart' className={s.cart}><HiOutlineShoppingBag className={s.cart_img}/></Link>
+      <Link to='/cart' className={s.cart}><HiOutlineShoppingBag className={s.cart_img} /></Link>
     </div>
   )
 }

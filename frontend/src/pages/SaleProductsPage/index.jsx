@@ -12,7 +12,7 @@ export default function SaleProductsPage() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {dispatch(getSaleProducts)}, [dispatch]);
+  useEffect(() => { dispatch(getSaleProducts) }, [dispatch]);
 
   const sale_products_state = useSelector(state => state.saleProducts);
 
@@ -22,8 +22,8 @@ export default function SaleProductsPage() {
     <div className={s.sale_products_page}>
       <h2>Products with sale</h2>
       <div className={s.filters}>
-      <SaleFilterPriceContainer />
-      <SaleSortingContainer />
+        <SaleFilterPriceContainer />
+        <SaleSortingContainer />
       </div>
       <ProductsContainer products={sale_products_state} />
     </div>

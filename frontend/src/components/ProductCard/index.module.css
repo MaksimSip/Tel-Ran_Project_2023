@@ -56,7 +56,7 @@
 
 .add_to_cart_btn {
   text-align: center;
-  line-height: 72px; 
+  line-height: 72px;
   margin-top: 228px;
   width: 279px;
   height: 72px;
@@ -70,11 +70,10 @@
   font-style: normal;
   font-weight: 600;
   display: none;
- 
 }
 
 .card:hover .add_to_cart_btn {
   display: block;
-  
+
   position: absolute;
 }

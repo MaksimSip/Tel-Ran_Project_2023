@@ -9,9 +9,8 @@
 }
 
 .filters {
-  margin-top: 80px; 
+  margin-top: 80px;
   display: grid;
-  grid-template-columns:300px 450px 350px;
+  grid-template-columns: 300px 450px 350px;
   align-items: center;
 }
-

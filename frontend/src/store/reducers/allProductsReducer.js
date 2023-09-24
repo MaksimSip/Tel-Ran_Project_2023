@@ -60,7 +60,6 @@ export const allProductsReducer = (state = [], action) => {
       return el;
     });
   } else if (action.type === GET_CHEAP_PRODUCTS) {
-    console.log(1);
     filters.discont = action.payload;
     if (action.payload) {
       return state.map((el) => {

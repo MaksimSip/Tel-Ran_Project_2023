@@ -18,7 +18,6 @@ export default function FilterPriceContainer() {
       if (name === 'max' && value === 0) { value = Infinity }
       const updatedParams = { ...filterParams, [name]: value };
       setFilterParams(updatedParams);
-      console.log(updatedParams);
       dispatch(filterProductsByPriceAction(updatedParams));
     }
   }
