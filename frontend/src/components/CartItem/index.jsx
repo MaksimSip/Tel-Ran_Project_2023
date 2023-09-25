@@ -8,8 +8,6 @@ export default function CartItem({ id, title, price, count, image, discont_price
 
   const dispatch = useDispatch();
 
-  console.log(price, discont_price);
-
   return (
 
     <div className={s.cart_item}>
@@ -22,11 +20,11 @@ export default function CartItem({ id, title, price, count, image, discont_price
           <p className={s.count_button} onClick={() => dispatch(incrementCountAction(id))}>+</p>
         </div>
       </div>
-      <p>{discont_price ? (<p className={s.price_1}>{discont_price * count}<span className={s.price_1_sm}>$</span></p>
+      <div>{discont_price ? (<p className={s.price_1}>{discont_price * count}<span className={s.price_1_sm}>$</span></p>
       ) : (
         <p className={s.price_1}>{price * count}<span className={s.price_1_sm}>$</span></p>
       )}
-      </p>
+      </div>
       <p className={s.price_2}>{price}$</p>
       <p className={s.cart_item_x} onClick={() => dispatch(deleteFromCartAction(id))}>
         X

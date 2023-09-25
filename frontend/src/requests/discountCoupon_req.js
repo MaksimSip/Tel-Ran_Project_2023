@@ -1,4 +1,4 @@
-export const getFormDiscount = (data) => {
+export const setFormDiscount = (data) => {
   return fetch("http://localhost:3333/sale/send", {
     method: "POST",
     headers: {

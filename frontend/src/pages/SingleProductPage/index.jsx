@@ -50,5 +50,3 @@ export default function SingleProductPage() {
 
   )
 }
-
-// попробовать затиреть объект

@@ -1,21 +1,11 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
 import CategoriesContainerMain from '../../components/MainCategoriesContainer';
 import DiscountCouponContainer from '../../components/DiscountCouponContainer';
-import ProductsContainer from '../../components/ProductsContainer';
 import SaleFormMainCard from '../../components/SaleFormMainCard'
-import { getSaleProducts } from '../../requests/products_req';
 import s from './index.module.css'
-// import MainSaleProductsContainer from '../../components/MainSaleProductsContainer';
+import MainSaleProductsContainer from '../../components/MainSaleProductsContainer';
 
 export default function MainPage() {
-
-  const dispatch = useDispatch();
-
-  useEffect(() => { dispatch(getSaleProducts) }, [dispatch]);
-
-  const sale_products_state = useSelector(state => state.saleProducts);
-
 
   return (
     <div>
@@ -30,8 +20,7 @@ export default function MainPage() {
       < DiscountCouponContainer />
       <div className={s.catalog_container}>
         <h1>Sale</h1>
-        {/* <MainSaleProductsContainer /> */}
-        < ProductsContainer products={sale_products_state.slice(0, 11)} />
+        <MainSaleProductsContainer />
       </div>
     </div>
   )

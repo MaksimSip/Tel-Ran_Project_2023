@@ -1,4 +1,4 @@
-export const getOrder = (requestData) => {
+export const setOrder = (requestData) => {
   return fetch("http://localhost:3333/order/send", {
     method: "POST",
     headers: {

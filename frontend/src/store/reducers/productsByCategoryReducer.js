@@ -23,27 +23,30 @@ export const getCheapProductsByCategory = (payload) => ({
 
 const filters = { min: 0, max: Infinity, discont: false };
 
-export const productsByCategoryReducer = (state = [], action) => {
+export const productsByCategoryReducer = (state = {}, action) => {
   if (action.type === LOAD_PRODUCTS_BY_CATEGORY) {
-    action.payload.data.map((el) => (el.visible = true));
+    const products = action.payload.data.map((el) => ({
+      ...el,
+      visible: true,
+    }));
+    action.payload.data = products;
     return action.payload;
   } else if (action.type === SORT_PRODUCTS_BY_CATEGORY) {
-    if (action.payload.data === "title") {
-      console.log(state);
-      state.sort((a, b) => a.title.localeCompare(b.title));
+    if (action.payload === "title") {
+      state.data.sort((a, b) => a.title.localeCompare(b.title));
     } else if (action.payload === "price_asc") {
-      state.sort((a, b) => a.price - b.price);
+      state.data.sort((a, b) => a.price - b.price);
     } else if (action.payload === "price_desc") {
-      state.sort((a, b) => b.price - a.price);
+      state.data.sort((a, b) => b.price - a.price);
     } else if (action.payload === "default") {
-      state.sort((a, b) => a.id - b.id);
+      state.data.sort((a, b) => a.id - b.id);
     }
-    return [...state];
+    return { ...state };
   } else if (action.type === FILTER_PRODUCTS_BY_PRICE_BY_CATEGORY) {
     const { min, max } = action.payload;
     filters.min = min;
     filters.max = max;
-    return state.map((el) => {
+    const products = state.data.map((el) => {
       if (filters.discont) {
         if (
           el.discont_price >= filters.min &&
@@ -62,10 +65,12 @@ export const productsByCategoryReducer = (state = [], action) => {
       }
       return el;
     });
+    state.data = products;
+    return { ...state };
   } else if (action.type === GET_CHEAP_PRODUCTS_BY_CATEGORY) {
     filters.discont = action.payload;
     if (action.payload) {
-      return state.map((el) => {
+      const products = state.data.map((el) => {
         if (el.discont_price != null) {
           if (
             el.discont_price >= filters.min &&
@@ -80,8 +85,10 @@ export const productsByCategoryReducer = (state = [], action) => {
         }
         return el;
       });
+      state.data = products;
+      return { ...state };
     } else {
-      return state.map((el) => {
+      const products = state.data.map((el) => {
         if (el.price >= filters.min && el.price <= filters.max) {
           el.visible = true;
         } else {
@@ -89,6 +96,8 @@ export const productsByCategoryReducer = (state = [], action) => {
         }
         return el;
       });
+      state.data = products;
+      return { ...state };
     }
   } else {
     return state;
