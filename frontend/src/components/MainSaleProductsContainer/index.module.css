@@ -1,6 +1,23 @@
 .discount_card {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.discount_card h1 {
+  font: 700 40px Montserrat;
+  padding: 50px 0 20px 30px;
+}
+
+.discount_card_products {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 0 30px;
+}
+
+@media (max-width: 750px) {
+  .discount_card_products {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin: 30px auto;
+    grid-template-columns: repeat(2, 1fr);
   }
+}

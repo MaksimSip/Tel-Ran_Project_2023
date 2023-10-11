@@ -1,3 +1,9 @@
+.single_product {
+  width: 1440px;
+  margin: 0 auto;
+  font-family: Montserrat;
+}
+
 .single_product_content {
   display: flex;
   justify-content: center;

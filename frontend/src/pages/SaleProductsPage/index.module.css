@@ -1,16 +1,16 @@
+.sale_products_page {
+  width: 1440px;
+  margin: 0 auto;
+}
+
 .sale_products_page h2 {
-  margin-left: 22px;
-  margin-top: 80px;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%;
-  letter-spacing: 1.2px;
+  padding: 80px 30px;
+  font: 700 40px Montserrat;
 }
 
 .filters {
-  margin-top: 80px;
-  display: grid;
-  grid-template-columns: 300px 500px;
+  padding-left: 30px;
+  display: flex;
+  gap: 40px;
   align-items: center;
 }

@@ -1,3 +1,9 @@
+.cart_page {
+  width: 1440px;
+  margin: 0 auto;
+  font-family: Montserrat;
+}
+
 .cart_page_products {
   margin-bottom: 143px;
 }
@@ -11,8 +17,9 @@
   letter-spacing: 1.2px;
 }
 
-.cart_page_back {
-  margin: 15px 0px 34px 650px;
+.cart_page_back a {
+  margin-left: 660px;
+  color: black;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;

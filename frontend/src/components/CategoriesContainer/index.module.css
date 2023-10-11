@@ -1,6 +1,25 @@
 .container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  padding: 80px 30px;
+  font: 700 40px Montserrat;
+}
+
+.container_card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 30px;
+  gap: 30px;
+}
+
+@media (max-width: 750px) {
+  .container_card {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px;
     gap: 30px;
-    margin: 20px auto;
+  }
 }

@@ -1,6 +1,39 @@
+.main_categories_container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.catalog_container_text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.catalog_container_text h1 {
+  font: 700 40px Montserrat;
+  padding: 0px 96px 0px 30px;
+}
+
+.a_button button {
+  padding: 7px 6px;
+  font: 700 12px Montserrat;
+  color: #8b8b8b;
+  border: 2px solid #8b8b8b;
+  cursor: pointer;
+}
+
 .container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
   margin: 20px auto;
+}
+
+@media (max-width: 750px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

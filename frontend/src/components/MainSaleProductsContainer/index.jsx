@@ -21,14 +21,18 @@ export default function MainSaleProductsContainer() {
   }
 
   const product_main = random(products_sale, 4);
-  
+
   return (
 
     <div className={s.discount_card}>
 
-      {
-        product_main.map(el => <ProductCard key={el.id} {...el} />)
-      }
+      <h1>Sale</h1>
+
+      <div className={s.discount_card_products}>
+        {
+          product_main.map(el => <ProductCard key={el.id} {...el} />)
+        }
+      </div>
 
     </div>
 

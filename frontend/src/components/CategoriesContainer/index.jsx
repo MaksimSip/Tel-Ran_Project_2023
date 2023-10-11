@@ -16,9 +16,15 @@ export default function CategoriesContainer() {
   return (
     <div className={s.container}>
 
-      {
-        categories_state.map(el => <CategoryCard key={el.id} {...el} />)
-      }
+      <h1>Categories</h1>
+
+      <div className={s.container_card}>
+
+        {
+          categories_state.map(el => <CategoryCard key={el.id} {...el} />)
+        }
+
+      </div>
 
     </div>
   )

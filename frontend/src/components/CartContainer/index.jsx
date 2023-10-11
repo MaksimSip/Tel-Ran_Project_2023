@@ -15,7 +15,7 @@ export default function CartContainer() {
     const requestData = {
       id: Date.now(),
       phoneNumber: data.phone,
-      products: cart_state
+      products: cart_state,
     };
 
     setOrder(requestData)

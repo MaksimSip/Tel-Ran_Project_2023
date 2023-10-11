@@ -1,8 +1,10 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -13,11 +15,15 @@
 }
 
 .card p {
+  color: black;
   margin-top: 20px;
   text-align: center;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 130%;
-  letter-spacing: 0.54px;
+  font: 600 18px Montserrat;
+}
+
+@media (max-width: 750px) {
+  .card img {
+    width: 518px;
+    height: 550px;
+  }
 }

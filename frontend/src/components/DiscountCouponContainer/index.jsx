@@ -6,7 +6,6 @@ import s from './index.module.css'
 export default function DiscountCouponContainer() {
 
   const submit = (data) => {
-    console.log(data);
     setFormDiscount(data, reset);
     reset();
   }
@@ -19,7 +18,7 @@ export default function DiscountCouponContainer() {
       <form onSubmit={handleSubmit(submit)}>
         <h1>5% off</h1>
         <h3>on the first order</h3>
-        <input type="tel" placeholder='   Phone number' name='phone' {...register("phone")}/>
+        <input type="tel" placeholder='Phone number' name='phone' {...register("phone")} />
         <button>Get a discount</button>
       </form>
     </div>
